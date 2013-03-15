@@ -1,0 +1,3 @@
+knws_portfolio_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: KnwsPortfolioBundle:Default:index }
