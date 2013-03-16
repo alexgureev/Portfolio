@@ -25,7 +25,7 @@
 }
 */
 body {
-  background: url("../img/bg.jpg");
+  background: url("../images/bg.jpg");
   color: #33322e;
   /*font: normal 16px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   font-family: "PT Sans",sans-serif;
@@ -61,7 +61,7 @@ p {
     width: 559px;
 }
 .gutter {
-  background: #900 url("/img/bg_ribbon.png");
+  background: #900 url("../images/bg_ribbon.png");
   -moz-box-shadow: inset 0 -1px 2px rgba(0, 0, 0, .4);
   -webkit-box-shadow: inset 0 -1px 2px rgba(0, 0, 0, .4);
   box-shadow: inset 0 -1px 2px rgba(0, 0, 0, .4);
@@ -135,7 +135,7 @@ h2 {
 }
 
 .clients h2 {padding-bottom: 40px;}
-.clients .asset { background-image: url("/img/sprite_clients.png"); }
+.clients .asset { background-image: url("../images/sprite_clients.png"); }
 .clients .skydb .asset { background-position: 0 0; }
 .clients .spyware_review .asset { background-position: -140px 0; }
 .clients .knws .asset { background-position: -280px 0; }
@@ -174,7 +174,7 @@ h2 {
 .footer {
   background-color: rgb(187, 186, 182);
   background-color: rgba(0, 0, 0, .2);
-  background-image: url("../img/bg_ribbon.png");
+  background-image: url("../images/bg_ribbon.png");
   border-top: 1px solid rgba(255, 255, 255, .4);
   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
@@ -252,7 +252,7 @@ footer .navigate li a {
 }
 
 .tag {
-    background-image: url("/img/sprite_tags.png");
+    background-image: url("../images/sprite_tags.png");
     background-repeat: no-repeat;
     height: 30px;
     margin-left: -16px;
