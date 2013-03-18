@@ -32,7 +32,9 @@ class DefaultController extends Controller
     {
         $product = $this->getDoctrine()
             ->getRepository('KnwsPortfolioBundle:Product')
-            ->find($id);
+            ->findOneByIdJoinedToCategory($id);
+
+        $categoryName = $product->getCategory();
 
         /*
          * $product = $repository->find($id);
@@ -55,7 +57,7 @@ class DefaultController extends Controller
             );
         }
 
-        return new Response('Created product id ' . $product->getName());
+        return new Response('Created product id ' . $product->getName() . ' in category ' . $categoryName);
     }
 
     public function updateAction($id)
