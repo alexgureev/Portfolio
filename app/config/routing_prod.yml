@@ -1,0 +1,4 @@
+knws_portfolio:
+    resource: "@KnwsPortfolioBundle/Resources/config/routing.yml"
+    prefix:   /
+

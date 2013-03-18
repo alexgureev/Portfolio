@@ -13,6 +13,8 @@ knws_portfolio_products:
 knws_portfolio_products_show:
     pattern:  /prod/{id}
     defaults: { _controller: KnwsPortfolioBundle:Default:show }
+    requirements:
+      id: \d+
 
 knws_portfolio_products_repo:
     pattern:  /repo

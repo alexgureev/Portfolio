@@ -32,9 +32,9 @@ class DefaultController extends Controller
     {
         $product = $this->getDoctrine()
             ->getRepository('KnwsPortfolioBundle:Product')
-            ->findOneByIdJoinedToCategory($id);
+            ->find($id);
 
-        $categoryName = $product->getCategory();
+        $categoryName = $product->getCategory()->getName();
 
         /*
          * $product = $repository->find($id);

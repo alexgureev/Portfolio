@@ -1,18 +1,25 @@
+{% block head %}
 <!DOCTYPE html>
 <html><head>
   <title>Портфолио</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  
-
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
   {% stylesheets 'bundles/knwsportfolio/css/*' filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
-
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
+{% endblock %}
+{% block body %}
 <body>
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-message">
+            <em>Notice</em>: {{ flashMessage }}
+        </div>
+    {% endfor %}
+
 <header>
     <div class="gutter"></div>
     <div class="container_12">
@@ -162,5 +169,6 @@
       </div>
     </div>
 </footer>
-
-</body></html>
+</body>
+</html>
+{% endblock %}
