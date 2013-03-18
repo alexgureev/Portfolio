@@ -12,4 +12,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+    public function showStuff($id)
+    {
+        /*
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT p FROM KnwsPortfolioBundle:Product p WHERE p.price > :price ORDER BY p.price ASC'
+        )->setParameter('price', '19.99');
+
+        $products = $query->getResult();*/
+    }
+
+    public function findAllOrderedByName()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p FROM KnwsPortfolioBundle:Product p ORDER BY p.name ASC')
+            ->getResult();
+    }
 }
