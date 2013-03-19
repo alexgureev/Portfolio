@@ -14,16 +14,15 @@
 {% endblock %}
 {% block body %}
 <body>
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-message">
-            <em>Notice</em>: {{ flashMessage }}
-        </div>
-    {% endfor %}
-
+{% for flashMessage in app.session.flashbag.get('notice') %}
+    <div class="flash-message">
+        <em>Notice</em>: {{ flashMessage }}
+    </div>
+{% endfor %}
+{% block header %}
 <header>
     <div class="gutter"></div>
     <div class="container_12">
-      <!--<img src="/img/logo130.png" class="logo pull-left">-->
       <nav>
       <ul class="navigate pull-right">
         <li>работы
@@ -34,7 +33,8 @@
       </nav>
     </div>
 </header>
-    <br>
+{% endblock %}
+<br>
 <section>
   <div class="clients projects container_12">
     <h2 class="grid_12">Проекты разработанные мною. Люди ими пользующиеся, счастливы.</h2>

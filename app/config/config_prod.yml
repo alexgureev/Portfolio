@@ -8,6 +8,12 @@ imports:
 framework:
     router:
         strict_requirements: null
+    profiler:
+        matcher: { ip: 192.168.0.0/24 }
+
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
 
 #doctrine:
 #    orm:
@@ -25,3 +31,6 @@ monolog:
             type:  stream
             path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
+assetic:
+    use_controller: true
+    bundles: [KnwsPortfolioBundle]

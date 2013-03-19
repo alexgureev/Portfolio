@@ -1,1 +1,7 @@
 {% extends "KnwsPortfolioBundle::layout.html.twig" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    {% block navigation %}{% include "KnwsPortfolioBundle:Works:navigation" %}{% endblock %}
+    {% block works %}{% include "KnwsPortfolioBundle:Works:complited" %}{% endblock %}
+{% endblock %}
