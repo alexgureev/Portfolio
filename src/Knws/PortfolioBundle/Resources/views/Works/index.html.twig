@@ -9,7 +9,7 @@
         <a href="{{ path('knws_portfolio_work', {'slug': work.slug}) }}">
         <span class="asset"></span>
         {{work.assetTitle}}
-        <span class="date">{{work.date}}</span>
+        <span class="date">{{work.date|date("Y")}}</span>
         </a>
     </h3>
     {% if work.tags.show == true %}<a class="tag {{work.tags.class}}" href="{{work.tags.url}}">{{work.tags.title}}</a>{% endif %}
