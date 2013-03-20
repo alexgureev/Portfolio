@@ -30,7 +30,7 @@ class WorksController extends Controller
             'title' => 'Выполненые работы'
         );
 
-        return $this->render('KnwsPortfolioBundle:Works:works.html.twig', $content);
+        return $this->render('KnwsPortfolioBundle:Works:index.html.twig', $content);
     }
 
     public function workAction()

@@ -30,13 +30,13 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Content", mappedBy="category")
      */
-    protected $products;
+    protected $content;
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
+        $this->content = new ArrayCollection();
     }
 
     /**
@@ -73,35 +73,35 @@ class Category
     }
 
     /**
-     * Add products
+     * Add content
      *
-     * @param \Knws\PortfolioBundle\Entity\Product $products
+     * @param \Knws\PortfolioBundle\Entity\Content $content
      * @return Category
      */
-    public function addProduct(\Knws\PortfolioBundle\Entity\Product $products)
+    public function addContent(\Knws\PortfolioBundle\Entity\Content $content)
     {
-        $this->products[] = $products;
+        $this->content[] = $content;
 
         return $this;
     }
 
     /**
-     * Remove products
+     * Remove content
      *
-     * @param \Knws\PortfolioBundle\Entity\Product $products
+     * @param \Knws\PortfolioBundle\Entity\Content $content
      */
-    public function removeProduct(\Knws\PortfolioBundle\Entity\Product $products)
+    public function removeContent(\Knws\PortfolioBundle\Entity\Content $content)
     {
-        $this->products->removeElement($products);
+        $this->content->removeElement($content);
     }
 
     /**
-     * Get products
+     * Get content
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getProducts()
+    public function getContent()
     {
-        return $this->products;
+        return $this->content;
     }
 }

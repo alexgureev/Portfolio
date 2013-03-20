@@ -4,19 +4,19 @@ namespace Knws\PortfolioBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Knws\PortfolioBundle\Entity\Product;
+use Knws\PortfolioBundle\Entity\Content;
 use Knws\PortfolioBundle\Entity\Category;
 
-class DefaultController extends Controller
+class ContentController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('KnwsPortfolioBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('KnwsPortfolioBundle:Content:index.html.twig', array());
     }
 
     public function createAction()
     {
-        $product = new Product();
+        $product = new Content();
         $product->setName('A Foo Bar');
         $product->setPrice('19.99');
         $product->setDescription('Lorem ipsum dolor');
@@ -31,7 +31,7 @@ class DefaultController extends Controller
     public function showAction($id)
     {
         $product = $this->getDoctrine()
-            ->getRepository('KnwsPortfolioBundle:Product')
+            ->getRepository('KnwsPortfolioBundle:Content')
             ->find($id);
 
         $categoryName = $product->getCategory()->getName();
@@ -63,7 +63,7 @@ class DefaultController extends Controller
     public function updateAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $product = $em->getRepository('KnwsPortfolioBundle:Product')->find($id);
+        $product = $em->getRepository('KnwsPortfolioBundle:Content')->find($id);
 
         if (!$product) {
             throw $this->createNotFoundException(
@@ -80,18 +80,18 @@ class DefaultController extends Controller
     public function repoAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $products = $em->getRepository('KnwsPortfolioBundle:Product')
+        $products = $em->getRepository('KnwsPortfolioBundle:Content')
                     ->findAllOrderedByName();
 
         return new Response('Created product id ' . $products[0]->getName());
     }
 
-    public function createProductAction()
+    public function createContentAction()
     {
         $category = new Category();
-        $category->setName('Main Products');
+        $category->setName('Main Contents');
 
-        $product = new Product();
+        $product = new Content();
         $product->setName('Foo');
         $product->setPrice(19.99);
         $product->setDescription('Lorem ipsum pes');
