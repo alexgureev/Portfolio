@@ -3,13 +3,14 @@
 namespace Knws\PortfolioBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Knws\PortfolioBundle\Model\Navigation;
 
 class WorksController extends Controller
 {
-    public function indexAction()
+    public function indexAction($_route)
     {
         $content = array(
-            'navigation' => $this->navigationAction('knws_portfolio_works'),
+            'navigation' => Navigation::get($_route),
             'works' => array(
                 'knws' => array(
                     'class' => 'grid_2 prefix_2',
@@ -28,10 +29,10 @@ class WorksController extends Controller
         return $this->render('KnwsPortfolioBundle:Works:index.html.twig', $content);
     }
 
-    public function workAction($slug)
+    public function workAction($slug, $_route)
     {
         $content = array(
-            'navigation' => $this->navigationAction(null),
+            'navigation' => Navigation::get($_route),
             'works' => array(
                 'class' => 'grid_2 prefix_2',
                 'url' => 'https://github.com/barif/knws',
@@ -49,24 +50,4 @@ class WorksController extends Controller
         return $this->render('KnwsPortfolioBundle:Works:work.html.twig', $content);
     }
 
-    public function navigationAction($asset)
-    {
-        $navigation = array(
-                'works' => array('asset' => 'knws_portfolio_works', 'label' => 'работы'),
-                'services' => array('asset' => 'knws_portfolio_services', 'label' => 'услуги'),
-                'skills' => array('asset' => 'knws_portfolio_skills', 'label' => 'навыки'),
-                'contacts' => array('asset' => 'knws_portfolio_contacts', 'label' => 'контакты')
-            );
-
-        foreach($navigation as $key => $val)
-        {
-            if($asset == $val['asset']) {
-                $navigation[$key]['active'] = true;
-            } else {
-                $navigation[$key]['active'] = false;
-            }
-        }
-
-        return $navigation;
-    }
 }

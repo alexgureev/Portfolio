@@ -6,18 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Knws\PortfolioBundle\Entity\Content;
 use Knws\PortfolioBundle\Entity\Category;
+use Knws\PortfolioBundle\Model\Navigation;
 
 class ContentController extends Controller
 {
-    public function skillsAction()
+    public function skillsAction($_route)
     {
         $content = array(
-            'navigation' => array(
-                'works' => array('asset' => 'knws_portfolio_works', 'label' => 'работы', 'active' => false),
-                'services' => array('asset' => 'knws_portfolio_services', 'label' => 'услуги', 'active' => false),
-                'skills' => array('asset' => 'knws_portfolio_skills', 'label' => 'навыки', 'active' => true),
-                'contacts' => array('asset' => 'knws_portfolio_contacts', 'label' => 'контакты', 'active' => false)
-            ),
+            'navigation' => Navigation::get($_route),
             'title' => 'Навыки',
             'content' => array(
                 'experience' => array(
@@ -57,15 +53,10 @@ class ContentController extends Controller
         return $this->render('KnwsPortfolioBundle:Content:index.html.twig', $content);
     }
 
-    public function servicesAction()
+    public function servicesAction($_route)
     {
         $content = array(
-            'navigation' => array(
-                'works' => array('asset' => 'knws_portfolio_works', 'label' => 'работы', 'active' => false),
-                'services' => array('asset' => 'knws_portfolio_services', 'label' => 'услуги', 'active' => true),
-                'skills' => array('asset' => 'knws_portfolio_skills', 'label' => 'навыки', 'active' => false),
-                'contacts' => array('asset' => 'knws_portfolio_contacts', 'label' => 'контакты', 'active' => false)
-            ),
+            'navigation' => Navigation::get($_route),
             'title' => 'Услуги',
             'content' => array(
                 'development' => array(
@@ -99,15 +90,10 @@ class ContentController extends Controller
         return $this->render('KnwsPortfolioBundle:Content:index.html.twig', $content);
     }
 
-    public function contactsAction()
+    public function contactsAction($_route)
     {
         $content = array(
-            'navigation' => array(
-                'works' => array('asset' => 'knws_portfolio_works', 'label' => 'работы', 'active' => false),
-                'services' => array('asset' => 'knws_portfolio_services', 'label' => 'услуги', 'active' => false),
-                'skills' => array('asset' => 'knws_portfolio_skills', 'label' => 'навыки', 'active' => false),
-                'contacts' => array('asset' => 'knws_portfolio_contacts', 'label' => 'контакты', 'active' => true)
-            ),
+            'navigation' => Navigation::get($_route),
             'title' => 'Контакты'
         );
 
