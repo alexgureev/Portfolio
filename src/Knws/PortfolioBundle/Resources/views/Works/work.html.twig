@@ -3,23 +3,23 @@
 {% block content %}
 <div class="projects clients skills container_12">
     <h2 class="grid_12">{{works.title}}</h2>
-    <div class="grid_2"><a href="{{ path() }}"><img src="/img/left.png"></a></div>
+    <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.slug}) }}"><img src="/img/left.png"></a></div>
     <li class="{{works.class}} grid_2">
     <h3>
         <a href="{{works.url}}">
         <span class="asset"></span>
-        {{works.title}}
+        {{works.assetTitle}}
         <span class="date">{{works.date}}</span>
         </a>
     </h3>
-    {% if works.tags.show == true %}<a class="{{works.tags.class}}" href="{{works.tags.url}}">{{works.tags.title}}</a>{% endif %}
+    {% if works.tags.show == true %}<a class="tag {{works.tags.class}}" href="{{works.tags.url}}">{{works.tags.title}}</a>{% endif %}
     </li>
 
     <div class="grid_6">
-        {{works.description}}
+        <p class="text-left">{{works.description}}</p>
     </div>
 
-    <div class="grid_2"><a href="{{ path() }}"><img src="/img/right.png"></a></div>
+    <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.slug}) }}"><img src="/img/right.png"></a></div>
   </div>
 {% endblock %}
 

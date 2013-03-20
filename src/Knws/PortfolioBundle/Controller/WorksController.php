@@ -17,12 +17,14 @@ class WorksController extends Controller
             ),
             'works' => array(
                 'knws' => array(
-                    'class' => 'knws grid_2 prefix_2',
+                    'class' => 'grid_2 prefix_2',
                     'slug' => 'knws',
-                    'title' => 'knws',
+                    'assetTitle' => 'knws',
                     'date' => '2013',
                     'tags' => //array('show' => false)
-                              array('class' => 'tag php', 'url' => 'http://php.net', 'title' => 'PHP', 'show' => true)
+                              array('class' => 'tag php', 'url' => 'http://php.net', 'title' => 'PHP', 'show' => true),
+                    'title' => 'KNWS framework',
+                    'description' => 'MVC фреймворк с использованием ORM Doctrine и Symfony Components, позволяет создавать многофункциональные веб-приложения и устанавливать их на сервер при помощи Composer.'
                 ),
             ),
             'title' => 'Выполненые работы'
@@ -35,15 +37,24 @@ class WorksController extends Controller
     {
         $content = array(
             'navigation' => array(
-                'works' => array('asset' => 'works', 'label' => 'работы', 'active' => false),
+                'works' => array('asset' => 'works', 'label' => 'работы', 'active' => true),
                 'services' => array('asset' => 'services', 'label' => 'услуги', 'active' => false),
                 'skills' => array('asset' => 'skills', 'label' => 'навыки', 'active' => false),
                 'contacts' => array('asset' => 'contacts', 'label' => 'контакты', 'active' => false)
             ),
             'works' => array(
-                'knws'
+                'knws' => array(
+                    'class' => 'grid_2 prefix_2',
+                    'slug' => 'knws',
+                    'assetTitle' => 'knws',
+                    'date' => '2013',
+                    'tags' => //array('show' => false)
+                              array('class' => 'tag php', 'url' => 'http://php.net', 'title' => 'PHP', 'show' => true),
+                    'title' => 'KNWS framework',
+                    'description' => 'MVC фреймворк с использованием ORM Doctrine и Symfony Components, позволяет создавать многофункциональные веб-приложения и устанавливать их на сервер при помощи Composer.'
+                ),
             ),
-            'title' => 'MAMU IBAL'
+            'title' => 'Выполненые работы'
         );
 
         return $this->render('KnwsPortfolioBundle:Works:work.html.twig', $content);

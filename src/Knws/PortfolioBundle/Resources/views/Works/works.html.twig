@@ -4,15 +4,15 @@
 <div class="clients projects container_12">
     <h2 class="grid_12">Проекты разработанные мною. Люди ими пользующиеся, счастливы.</h2>
     {% for work in works %}
-    <li class="{{work.class}}">
+    <li class="{{work.slug}} {{work.class}}">
     <h3>
         <a href="{{ path('knws_portfolio_work', {'slug': work.slug}) }}">
         <span class="asset"></span>
-        {{work.title}}
+        {{work.assetTitle}}
         <span class="date">{{work.date}}</span>
         </a>
     </h3>
-    {% if work.tags.show == true %}<a class="{{work.tags.class}}" href="{{work.tags.url}}">{{work.tags.title}}</a>{% endif %}
+    {% if work.tags.show == true %}<a class="tag {{work.tags.class}}" href="{{work.tags.url}}">{{work.tags.title}}</a>{% endif %}
     </li>
     {% endfor %}
   </div>
