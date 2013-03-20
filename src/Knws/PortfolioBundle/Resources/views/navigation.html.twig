@@ -1,0 +1,16 @@
+<header>
+    <div class="gutter"></div>
+    <div class="container_12">
+      <nav>
+      <ul class="navigate pull-right">
+        {% for nav in navigation %}
+          {% if nav.active == true %}
+          <li>{{nav.label}}
+          {% else %}
+          <li><a href="/{{nav.asset}}">{{nav.label}}</a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      </nav>
+    </div>
+</header>
