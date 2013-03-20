@@ -137,7 +137,7 @@ h2 {
 .clients h2 {padding-bottom: 40px;}
 .clients .asset { background-image: url("../images/sprite_clients.png"); }
 .clients .skydb .asset { background-position: 0 0; }
-.clients .spyware_review .asset { background-position: -140px 0; }
+.clients .spyware .asset { background-position: -140px 0; }
 .clients .knws .asset { background-position: -280px 0; }
 .clients .transmission .asset { background-position: -420px 0; }
 .clients .crawler .asset { background-position: -560px 0; }

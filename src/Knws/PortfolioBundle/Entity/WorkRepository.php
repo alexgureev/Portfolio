@@ -12,4 +12,22 @@ use Doctrine\ORM\EntityRepository;
  */
 class WorkRepository extends EntityRepository
 {
+    public function frontpage()
+    {
+        $query = $this->getEntityManager()
+            ->createQuery('
+                SELECT w FROM KnwsPortfolioBundle:Work w'
+            );
+
+        try {
+            return $query->getResult();
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+    }
+
+    public function getNextPrev()
+    {
+
+    }
 }
