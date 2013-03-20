@@ -7,7 +7,7 @@
           {% if nav.active == true %}
           <li>{{nav.label}}
           {% else %}
-          <li><a href="/{{nav.asset}}">{{nav.label}}</a>
+          <li><a href="{{ path(nav.asset) }}">{{nav.label}}</a>
           {% endif %}
         {% endfor %}
       </ul>

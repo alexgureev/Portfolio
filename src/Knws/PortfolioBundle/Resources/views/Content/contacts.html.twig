@@ -1,0 +1,30 @@
+{% extends "KnwsPortfolioBundle::layout.html.twig" %}
+{% block title %}{{title}} — {{ parent() }}{% endblock %}
+{% block content %}
+<div class="skills container_12">
+<h2 class="grid_12">Как связаться?</h2>
+<p class="text-left">Возможна личная встреча с заказчиком в Луганске, также возможна удаленная работа над проектом или на постоянной основе.</p>
+<p class="text-left">
+Отправить техническое задание можно на почту
+<a href="mailto:work@barif.ru">work@barif.ru</a>
+.
+</p>
+<p class="text-left">
+Обсудить детали по телефону
+<a href="tel:066-766-0187">066-766-0187</a>
+или в
+<a href="skype:executorgreat">скайп-конференции</a>
+.
+</p>
+<h2 class="grid_12">Оставить онлайн заявку:</h2>
+<form method="GET" action="/submit">
+<textarea class="contacttext" name="order">Оставьте ваши контактные данные, я с вами свяжусь.</textarea>
+<br>
+<button class="btn" type="submit">Отправить</button>
+</form>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

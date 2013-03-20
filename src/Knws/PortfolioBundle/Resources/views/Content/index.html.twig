@@ -1,7 +1,12 @@
 {% extends "KnwsPortfolioBundle::layout.html.twig" %}
 {% block title %}{{title}} — {{ parent() }}{% endblock %}
 {% block content %}
-<div class="clients projects container_12">
-
-  </div>
+{% for item in content %}
+<div class="skills container_12 text-left">
+<h2 class="grid_12">{{item.title}}</h2>
+{% for current in item.list %}
+    <p class="text-left">{{current|raw}}</p>
+{% endfor %}
+</div>
+{% endfor %}
 {% endblock %}

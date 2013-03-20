@@ -11,3 +11,16 @@ knws_portfolio_work:
     defaults: { _controller: KnwsPortfolioBundle:Works:work }
     requirements:
       slug: "[a-zA-Z]+"
+
+knws_portfolio_services:
+    pattern:  /services
+    defaults: { _controller: KnwsPortfolioBundle:Content:services }
+
+knws_portfolio_skills:
+    pattern:  /skills
+    defaults: { _controller: KnwsPortfolioBundle:Content:skills }
+
+knws_portfolio_contacts:
+    pattern:  /contacts
+    defaults: { _controller: KnwsPortfolioBundle:Content:contacts }
+

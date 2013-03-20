@@ -10,10 +10,10 @@ class WorksController extends Controller
     {
         $content = array(
             'navigation' => array(
-                'works' => array('asset' => 'works', 'label' => 'работы', 'active' => true),
-                'services' => array('asset' => 'services', 'label' => 'услуги', 'active' => false),
-                'skills' => array('asset' => 'skills', 'label' => 'навыки', 'active' => false),
-                'contacts' => array('asset' => 'contacts', 'label' => 'контакты', 'active' => false)
+                'works' => array('asset' => 'knws_portfolio_works', 'label' => 'работы', 'active' => true),
+                'services' => array('asset' => 'knws_portfolio_services', 'label' => 'услуги', 'active' => false),
+                'skills' => array('asset' => 'knws_portfolio_skills', 'label' => 'навыки', 'active' => false),
+                'contacts' => array('asset' => 'knws_portfolio_contacts', 'label' => 'контакты', 'active' => false)
             ),
             'works' => array(
                 'knws' => array(
@@ -37,10 +37,10 @@ class WorksController extends Controller
     {
         $content = array(
             'navigation' => array(
-                'works' => array('asset' => 'works', 'label' => 'работы', 'active' => true),
-                'services' => array('asset' => 'services', 'label' => 'услуги', 'active' => false),
-                'skills' => array('asset' => 'skills', 'label' => 'навыки', 'active' => false),
-                'contacts' => array('asset' => 'contacts', 'label' => 'контакты', 'active' => false)
+                'works' => array('asset' => 'knws_portfolio_works', 'label' => 'работы', 'active' => true),
+                'services' => array('asset' => 'knws_portfolio_services', 'label' => 'услуги', 'active' => false),
+                'skills' => array('asset' => 'knws_portfolio_skills', 'label' => 'навыки', 'active' => false),
+                'contacts' => array('asset' => 'knws_portfolio_contacts', 'label' => 'контакты', 'active' => false)
             ),
             'works' => array(
                 'knws' => array(
