@@ -1,12 +1,12 @@
 {% extends "KnwsPortfolioBundle::layout.html.twig" %}
-{% block title %}{{title}}{% endblock %}
+{% block title %}{{title}} — {{ parent() }}{% endblock %}
 {% block content %}
 <div class="projects clients skills container_12">
     <h2 class="grid_12">{{works.title}}</h2>
-    <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.slug}) }}"><img src="/img/left.png"></a></div>
-    <li class="{{works.class}} grid_2">
+    <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.slug}) }}"><img src="{{asset('bundles/knwsportfolio/images/left.png')}}"></a></div>
+    <li class="{{works.slug}} grid_2">
     <h3>
-        <a href="{{works.url}}">
+        <a href="{{works.url|raw}}">
         <span class="asset"></span>
         {{works.assetTitle}}
         <span class="date">{{works.date}}</span>
@@ -16,10 +16,10 @@
     </li>
 
     <div class="grid_6">
-        <p class="text-left">{{works.description}}</p>
+        {{works.description|raw}}
     </div>
 
-    <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.slug}) }}"><img src="/img/right.png"></a></div>
+    <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.slug}) }}"><img src="{{asset('bundles/knwsportfolio/images/right.png')}}"></a></div>
   </div>
 {% endblock %}
 

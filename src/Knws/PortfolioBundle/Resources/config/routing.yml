@@ -7,7 +7,7 @@ knws_portfolio_works:
     defaults: { _controller: KnwsPortfolioBundle:Works:index }
 
 knws_portfolio_work:
-    pattern:  /project/{slug}
+    pattern:  /works/{slug}
     defaults: { _controller: KnwsPortfolioBundle:Works:work }
     requirements:
       slug: "[a-zA-Z]+"
