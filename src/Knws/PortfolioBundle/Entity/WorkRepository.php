@@ -26,6 +26,20 @@ class WorkRepository extends EntityRepository
         }
     }
 
+    public function work($slug)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery('
+                SELECT w FROM KnwsPortfolioBundle:Work w WHERE w.slug = :slug'
+            )->setParameter('slug', $slug);
+
+        try {
+            return $query->getSingleResult();
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+    }
+
     public function getNextPrev()
     {
 
