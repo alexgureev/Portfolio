@@ -15,20 +15,22 @@ class WorksController extends Controller
 
         $content = array(
             'navigation' => Navigation::get($_route),
-            'works' => array(
-                'knws' => array(
-                    'class' => $works[0]->getClass(),
-                    'url' => $works[0]->getUrl(),
-                    'slug' => $works[0]->getSlug(),
-                    'assetTitle' => $works[0]->getAssetTitle(),
-                    'date' => $works[0]->getDate()->format('Y'),
-                    'tags' => array('show' => true, 'class' => $works[0]->getTags()->getClass(), 'url' => $works[0]->getTags()->getUrl(), 'title' => $works[0]->getTags()->getTitle()),
-                    'title' => $works[0]->getTitle(),
-                    'description' => $works[0]->getDescription()
-                )
-            ),
             'title' => 'Выполненые работы'
         );
+
+        for($i=0; $i<=sizeof($works)-1; $i++) {
+            $content['works'][$i] = array(
+                    'class' => $works[$i]->getClass(),
+                    'url' => $works[$i]->getUrl(),
+                    'slug' => $works[$i]->getSlug(),
+                    'assetTitle' => $works[$i]->getAssetTitle(),
+                    'date' => $works[$i]->getDate(),
+                    'tags' => array('show' => true, 'class' => $works[$i]->getTags()->getClass(), 'url' => $works[$i]->getTags()->getUrl(), 'title' => $works[$i]->getTags()->getTitle()),
+                    'title' => $works[$i]->getTitle(),
+                    'description' => $works[$i]->getDescription()
+            );
+        }
+
 
         return $this->render('KnwsPortfolioBundle:Works:index.html.twig', $content);
     }
@@ -53,7 +55,7 @@ class WorksController extends Controller
                 'title' => $works->getTitle(),
                 'description' => $works->getDescription()
             ),
-            'title' => 'KNWS framework'
+            'title' => $works->getTitle()
         );
 
         return $this->render('KnwsPortfolioBundle:Works:work.html.twig', $content);

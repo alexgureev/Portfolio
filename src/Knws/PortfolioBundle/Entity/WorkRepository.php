@@ -16,7 +16,7 @@ class WorkRepository extends EntityRepository
     {
         $query = $this->getEntityManager()
             ->createQuery('
-                SELECT w FROM KnwsPortfolioBundle:Work w'
+                SELECT w FROM KnwsPortfolioBundle:Work w ORDER BY w.id DESC'
             );
 
         try {
