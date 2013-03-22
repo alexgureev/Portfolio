@@ -36,6 +36,20 @@ class Work
      */
     private $slug;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="after", type="string", length=255)
+     */
+    private $before;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="before", type="string", length=255)
+     */
+    private $after;
     /**
      * @var string
      *
@@ -80,7 +94,7 @@ class Work
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -96,14 +110,14 @@ class Work
     public function setClass($class)
     {
         $this->class = $class;
-    
+
         return $this;
     }
 
     /**
      * Get class
      *
-     * @return string 
+     * @return string
      */
     public function getClass()
     {
@@ -119,14 +133,14 @@ class Work
     public function setSlug($slug)
     {
         $this->slug = $slug;
-    
+
         return $this;
     }
 
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -142,14 +156,14 @@ class Work
     public function setAssetTitle($assetTitle)
     {
         $this->assetTitle = $assetTitle;
-    
+
         return $this;
     }
 
     /**
      * Get assetTitle
      *
-     * @return string 
+     * @return string
      */
     public function getAssetTitle()
     {
@@ -165,14 +179,14 @@ class Work
     public function setDate($date)
     {
         $this->date = $date;
-    
+
         return $this;
     }
 
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -188,14 +202,14 @@ class Work
     public function setUrl($url)
     {
         $this->url = $url;
-    
+
         return $this;
     }
 
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -211,14 +225,14 @@ class Work
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -234,14 +248,14 @@ class Work
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -257,17 +271,63 @@ class Work
     public function setTags(\Knws\PortfolioBundle\Entity\Tag $tags = null)
     {
         $this->tags = $tags;
-    
+
         return $this;
     }
 
     /**
      * Get tags
      *
-     * @return \Knws\PortfolioBundle\Entity\Tag 
+     * @return \Knws\PortfolioBundle\Entity\Tag
      */
     public function getTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * Set before
+     *
+     * @param string $before
+     * @return Work
+     */
+    public function setBefore($before)
+    {
+        $this->before = $before;
+    
+        return $this;
+    }
+
+    /**
+     * Get before
+     *
+     * @return string 
+     */
+    public function getBefore()
+    {
+        return $this->before;
+    }
+
+    /**
+     * Set after
+     *
+     * @param string $after
+     * @return Work
+     */
+    public function setAfter($after)
+    {
+        $this->after = $after;
+    
+        return $this;
+    }
+
+    /**
+     * Get after
+     *
+     * @return string 
+     */
+    public function getAfter()
+    {
+        return $this->after;
     }
 }
