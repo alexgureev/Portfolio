@@ -1,0 +1,17 @@
+<div class="skills container_12">
+    <h2 class="grid_12">Скриншоты, статистика, посещаемость.</h2>
+    <div class="bs-docs-example grid_8 prefix_2 suffix_2">
+        <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                {% for i in 0..works.carousel-1 %}
+                <li class="{% if i == 0 %}active{% endif %}" data-target="#myCarousel" data-slide-to="{{ i }}"></li>{% endfor %}
+            </ol>
+            <div class="carousel-inner">
+                {% for i in 1..works.carousel %}
+                <div class="item{% if i == 1 %} active{% endif %}">
+                    <img src="{{ asset('bundles/knwsportfolio/images/'~works.slug~i~'.png') }}" alt="">
+                </div>{% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

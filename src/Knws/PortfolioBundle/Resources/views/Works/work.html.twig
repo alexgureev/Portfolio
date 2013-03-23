@@ -1,10 +1,10 @@
 {% extends "KnwsPortfolioBundle::layout.html.twig" %}
 {% block title %}{{title}} — {{ parent() }}{% endblock %}
 {% block content %}
-<div class="projects clients skills container_12">
+<div class="clients skills container_12">
     <h2 class="grid_12">{{works.title}}</h2>
     <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.next}) }}"><img src="{{asset('bundles/knwsportfolio/images/left.png')}}"></a></div>
-    <li class="{{works.slug}} grid_2">
+    <li class="{{works.slug}} projects grid_2">
     <h3>
         <a href="{{works.url|raw}}">
         <span class="asset"></span>
@@ -20,7 +20,8 @@
     </div>
 
     <div class="grid_2"><a href="{{ path('knws_portfolio_work', {'slug': works.prev}) }}"><img src="{{asset('bundles/knwsportfolio/images/right.png')}}"></a></div>
-  </div>
+</div>
+{% if works.carousel > 0 %} {% include "KnwsPortfolioBundle:Works:carousel.html.twig" %} {% endif %}
 {% endblock %}
 
 

@@ -91,6 +91,14 @@ class Work
      */
     private $description;
 
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="carousel", type="integer")
+     */
+    private $carousel;
+
     /**
      * Get id
      *
@@ -294,14 +302,14 @@ class Work
     public function setBefore($before)
     {
         $this->before = $before;
-    
+
         return $this;
     }
 
     /**
      * Get before
      *
-     * @return string 
+     * @return string
      */
     public function getBefore()
     {
@@ -317,17 +325,40 @@ class Work
     public function setAfter($after)
     {
         $this->after = $after;
-    
+
         return $this;
     }
 
     /**
      * Get after
      *
-     * @return string 
+     * @return string
      */
     public function getAfter()
     {
         return $this->after;
+    }
+
+    /**
+     * Set carousel
+     *
+     * @param integer $carousel
+     * @return Work
+     */
+    public function setCarousel($carousel)
+    {
+        $this->carousel = $carousel;
+    
+        return $this;
+    }
+
+    /**
+     * Get carousel
+     *
+     * @return integer 
+     */
+    public function getCarousel()
+    {
+        return $this->carousel;
     }
 }

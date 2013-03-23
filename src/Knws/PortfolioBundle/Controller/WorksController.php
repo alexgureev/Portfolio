@@ -49,6 +49,7 @@ class WorksController extends Controller
                 'slug' => $slug,
                 'next' => $works->getBefore(),
                 'prev' => $works->getAfter(),
+                'carousel' => $works->getCarousel(),
                 'assetTitle' => $works->getAssetTitle(),
                 'date' => $works->getDate()->format('Y'),
                 'tags' => array('show' => true, 'class' => $works->getTags()->getClass(), 'url' => $works->getTags()->getUrl(), 'title' => $works->getTags()->getTitle()),
