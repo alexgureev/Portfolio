@@ -3,6 +3,7 @@
 namespace Knws\PortfolioBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Knws\PortfolioBundle\Model\Navigation;
 
 class WorksController extends Controller
@@ -41,6 +42,12 @@ class WorksController extends Controller
             ->getRepository('KnwsPortfolioBundle:Work')
             ->work($slug);
 
+        //$author = new Author();
+        // ... do something to the $author object
+
+        $validator = $this->get('validator');
+        $errors = $validator->validate($works);
+
         $content = array(
             'navigation' => Navigation::get($_route),
             'works' => array(
@@ -59,7 +66,11 @@ class WorksController extends Controller
             'title' => $works->getTitle()
         );
 
-        return $this->render('KnwsPortfolioBundle:Works:work.html.twig', $content);
+        if (count($errors) > 0) {
+            return new Response(print_r($errors[0], true));
+        } else {
+            return $this->render('KnwsPortfolioBundle:Works:work.html.twig', $content);
+        }
     }
 
 }

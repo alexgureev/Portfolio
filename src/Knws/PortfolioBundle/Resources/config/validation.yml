@@ -1,0 +1,4 @@
+Knws\PortfolioBundle\Entity\Work:
+    properties:
+        title:
+            - NotBlank: ~
