@@ -5,6 +5,8 @@ namespace Knws\PortfolioBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Knws\PortfolioBundle\Model\Navigation;
+use Knws\PortfolioBundle\Form\WorkType;
+use Knws\PortfolioBundle\Entity\Work;
 
 class WorksController extends Controller
 {
@@ -63,14 +65,56 @@ class WorksController extends Controller
                 'title' => $works->getTitle(),
                 'description' => $works->getDescription()
             ),
-            'title' => $works->getTitle()
+            'title' => $works->getTitle(),
+            'errors' => $errors
         );
 
-        if (count($errors) > 0) {
-            return new Response(print_r($errors[0], true));
-        } else {
+        //if (count($errors) > 0) {
+        //    return new Response(print_r($errors[0], true));
+        //} else {
             return $this->render('KnwsPortfolioBundle:Works:work.html.twig', $content);
-        }
+        //}
     }
 
+    public function newAction($_route)
+    {
+        $work = new Work();
+        $form = $this->createForm(new WorkType(), $work);
+
+        $request = $this->getRequest();
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+
+                $em = $this->getDoctrine()
+                           ->getEntityManager();
+                $em->persist($work);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('knws_portfolio_works_new'));
+            }
+        }
+
+        return $this->render('KnwsPortfolioBundle:Works:new.html.twig', array(
+            'navigation' => Navigation::get($_route),
+            'form' => $form->createView(),
+            'title' => 'Добавление работы'
+       ));
+        //$form = $this->createForm(new WorkType(), new Work());
+        /*
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($task);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('knws_portfolio_works_new'));
+        }
+*/
+        /*return $this->render('KnwsPortfolioBundle:Works:new.html.twig', array(
+            'navigation' => Navigation::get($_route),
+            'works' => $form->createView(),
+            'title' => 'Добавление работы'
+        ));*/
+    }
 }

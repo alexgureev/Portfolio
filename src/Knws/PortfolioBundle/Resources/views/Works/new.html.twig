@@ -1,0 +1,14 @@
+{% extends "KnwsPortfolioBundle::layout.html.twig" %}
+{% block title %}{{title}} — {{ parent() }}{% endblock %}
+{% block content %}
+<div class="clients skills container_12">
+    <h2 class="grid_12">{{title}}</h2>
+    <form action="{{ path('knws_portfolio_works_new') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" />
+    </form>
+</div>
+{% endblock %}

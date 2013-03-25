@@ -6,6 +6,10 @@ knws_portfolio_works:
     pattern:  /works
     defaults: { _controller: KnwsPortfolioBundle:Works:index }
 
+knws_portfolio_works_new:
+    pattern:  /works/new
+    defaults: { _controller: KnwsPortfolioBundle:Works:new }
+
 knws_portfolio_work:
     pattern:  /works/{slug}
     defaults: { _controller: KnwsPortfolioBundle:Works:work }

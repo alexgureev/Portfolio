@@ -40,16 +40,17 @@ class Work
     /**
      * @var string
      *
-     * @ORM\Column(name="after", type="string", length=255)
+     * @ORM\Column(name="prev", type="string", length=255)
      */
-    private $before;
+    private $prev;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="before", type="string", length=255)
+     * @ORM\Column(name="next", type="string", length=255)
      */
-    private $after;
+    private $next;
+
     /**
      * @var string
      *
@@ -294,52 +295,6 @@ class Work
     }
 
     /**
-     * Set before
-     *
-     * @param string $before
-     * @return Work
-     */
-    public function setBefore($before)
-    {
-        $this->before = $before;
-
-        return $this;
-    }
-
-    /**
-     * Get before
-     *
-     * @return string
-     */
-    public function getBefore()
-    {
-        return $this->before;
-    }
-
-    /**
-     * Set after
-     *
-     * @param string $after
-     * @return Work
-     */
-    public function setAfter($after)
-    {
-        $this->after = $after;
-
-        return $this;
-    }
-
-    /**
-     * Get after
-     *
-     * @return string
-     */
-    public function getAfter()
-    {
-        return $this->after;
-    }
-
-    /**
      * Set carousel
      *
      * @param integer $carousel
@@ -348,14 +303,14 @@ class Work
     public function setCarousel($carousel)
     {
         $this->carousel = $carousel;
-    
+
         return $this;
     }
 
     /**
      * Get carousel
      *
-     * @return integer 
+     * @return integer
      */
     public function getCarousel()
     {
