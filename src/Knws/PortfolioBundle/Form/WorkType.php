@@ -14,8 +14,8 @@ class WorkType extends AbstractType
         $builder
             ->add('class')
             ->add('slug')
-            ->add('before')
-            ->add('after')
+            ->add('next')
+            ->add('prev')
             ->add('assetTitle')
             ->add('date')
             ->add('url')

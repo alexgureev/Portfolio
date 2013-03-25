@@ -56,8 +56,8 @@ class WorksController extends Controller
                 'class' => $works->getClass(),
                 'url' => $works->getUrl(),
                 'slug' => $slug,
-                'next' => $works->getBefore(),
-                'prev' => $works->getAfter(),
+                'next' => $works->getNext(),
+                'prev' => $works->getPrev(),
                 'carousel' => $works->getCarousel(),
                 'assetTitle' => $works->getAssetTitle(),
                 'date' => $works->getDate()->format('Y'),
@@ -101,20 +101,5 @@ class WorksController extends Controller
             'form' => $form->createView(),
             'title' => 'Добавление работы'
        ));
-        //$form = $this->createForm(new WorkType(), new Work());
-        /*
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($task);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('knws_portfolio_works_new'));
-        }
-*/
-        /*return $this->render('KnwsPortfolioBundle:Works:new.html.twig', array(
-            'navigation' => Navigation::get($_route),
-            'works' => $form->createView(),
-            'title' => 'Добавление работы'
-        ));*/
     }
 }

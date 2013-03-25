@@ -4,7 +4,7 @@
 <div class="clients projects container_12">
     <h2 class="grid_12">Проекты разработанные мною. Люди ими пользующиеся, счастливы.</h2>
     {% for work in works %}
-    <li class="{{work.slug}} {{work.class}}">
+    <li class="grid_2 {{work.slug}} {{work.class}}">
     <h3>
         <a href="{{ path('knws_portfolio_work', {'slug': work.slug}) }}">
         <span class="asset"></span>

@@ -316,4 +316,50 @@ class Work
     {
         return $this->carousel;
     }
+
+    /**
+     * Set prev
+     *
+     * @param string $prev
+     * @return Work
+     */
+    public function setPrev($prev)
+    {
+        $this->prev = $prev;
+    
+        return $this;
+    }
+
+    /**
+     * Get prev
+     *
+     * @return string 
+     */
+    public function getPrev()
+    {
+        return $this->prev;
+    }
+
+    /**
+     * Set next
+     *
+     * @param string $next
+     * @return Work
+     */
+    public function setNext($next)
+    {
+        $this->next = $next;
+    
+        return $this;
+    }
+
+    /**
+     * Get next
+     *
+     * @return string 
+     */
+    public function getNext()
+    {
+        return $this->next;
+    }
 }
