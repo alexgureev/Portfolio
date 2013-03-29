@@ -28,3 +28,14 @@ knws_portfolio_contacts:
     pattern:  /contacts
     defaults: { _controller: KnwsPortfolioBundle:Content:contacts }
 
+knws_logout:
+    pattern:  /logout
+    defaults: { _controller: KnwsPortfolioBundle:Secured:logout }
+
+knws_login_check:
+    pattern:  /login_check
+    defaults: { _controller: KnwsPortfolioBundle:Secured:loginCheck }
+
+knws_login:
+    pattern:  /login
+    defaults: { _controller: KnwsPortfolioBundle:Secured:login }
