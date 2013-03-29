@@ -17,8 +17,14 @@ class WorkType extends AbstractType
             ->add('next')
             ->add('prev')
             ->add('assetTitle')
-            ->add('date')
-            ->add('url')
+            ->add('date', 'date', array(
+                'widget' => 'choice',
+                'pattern' => 'y',
+                'years'         => range(date('Y') - 5, date('Y') + 5),
+                'format'        => \IntlDateFormatter::MEDIUM,
+                'label' => 'Разработано'))
+            ->add('url', 'url', array(
+                'label' => 'Ссылка'))
             ->add('title')
             ->add('description')
             ->add('carousel')
@@ -28,7 +34,10 @@ class WorkType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Knws\PortfolioBundle\Entity\Work'
+            'data_class' => 'Knws\PortfolioBundle\Entity\Work',
+            'csrf_protection' => true,
+            'csrf_field_name' => '_token',
+            'intention'       => 'mytopsecret',
         ));
     }
 
