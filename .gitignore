@@ -7,3 +7,5 @@
 /bin/
 /composer.phar
 /web/test.php
+/nbproject/private/
+/app/Work.sql

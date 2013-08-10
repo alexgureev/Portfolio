@@ -42,11 +42,11 @@ assetic:
 doctrine:
     dbal:
         driver:   'pdo_mysql'
-        host:     'localhost'
+        host:     '91.239.233.79'
         port:     '3306'
-        dbname:   'knws'
-        user:     'knws'
-        password: 'fVNrJPsKF2UqxvPoqtnG'
+        dbname:   'portfolio'
+        user:     'paranoid'
+        password: 'bCQT5mDDCJqq6zHlrjt6'
         charset:  UTF8
         # if using pdo_sqlite as your database driver, add the path in parameters.yml
         # e.g. database_path: %kernel.root_dir%/data/data.db3
